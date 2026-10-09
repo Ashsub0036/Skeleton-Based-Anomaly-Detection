@@ -1,0 +1,30 @@
+# Java
+target/
+*.class
+*.jar
+
+# Maven
+.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Python
+Model/venv/
+__pycache__/
+*.pyc
+
+# Node
+Frontend/node_modules/
+Frontend/build/
+
+# Environment files
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

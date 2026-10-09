@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f0f4f8" />
+  <title>CCTV Guard</title>
+  <style>
+    /* Force light mode — block Chrome dark theme from touching anything */
+    :root {
+      color-scheme: light !important;
+      forced-color-adjust: none !important;
+    }
+    html {
+      background: #f0f4f8 !important;
+      color: #1e293b !important;
+      forced-color-adjust: none !important;
+    }
+    body {
+      margin: 0 !important;
+      padding: 0 !important;
+      background: #f0f4f8 !important;
+      background-color: #f0f4f8 !important;
+      color: #1e293b !important;
+      forced-color-adjust: none !important;
+      -webkit-text-fill-color: #1e293b;
+    }
+    #root {
+      background: #f0f4f8 !important;
+      background-color: #f0f4f8 !important;
+      min-height: 100vh;
+      color: #1e293b !important;
+    }
+    /* This kills Chrome's automatic dark mode on ALL elements */
+    * {
+      forced-color-adjust: none !important;
+      -webkit-forced-color-adjust: none !important;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root, html, body, #root, * {
+        color-scheme: light !important;
+        background-color: unset;
+      }
+      html { background: #f0f4f8 !important; }
+      body { background: #f0f4f8 !important; color: #1e293b !important; }
+      #root { background: #f0f4f8 !important; }
+    }
+  </style>
+  <script>
+    // Synchronous — runs before first paint, no flash
+    (function() {
+      document.documentElement.style.setProperty('background', '#f0f4f8', 'important');
+      document.documentElement.style.setProperty('background-color', '#f0f4f8', 'important');
+      document.documentElement.style.setProperty('color', '#1e293b', 'important');
+      document.documentElement.style.setProperty('color-scheme', 'light', 'important');
+      // Disable Chrome dark mode
+      if (window.matchMedia) {
+        const meta = document.createElement('meta');
+        meta.name = 'color-scheme';
+        meta.content = 'light only';
+        document.head.appendChild(meta);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+</body>
+</html>

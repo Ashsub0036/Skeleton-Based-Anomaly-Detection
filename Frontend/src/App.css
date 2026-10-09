@@ -1,0 +1,66 @@
+/* ===== App.css — force white theme everywhere ===== */
+
+.App {
+  text-align: center;
+}
+
+/* Override dark mode for ALL common elements */
+*, *::before, *::after {
+  color-scheme: light !important;
+}
+
+/* Force white backgrounds on cards and panels */
+.stat-card,
+.card-panel,
+.cam-card {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+}
+
+/* Prevent browser dark mode from inverting anything */
+@media (prefers-color-scheme: dark) {
+  * {
+    color-scheme: light !important;
+  }
+  body {
+    background-color: #f0f4f8 !important;
+    color: #1e293b !important;
+  }
+  .stat-card,
+  .card-panel,
+  .cam-card {
+    background-color: #ffffff !important;
+    color: #1e293b !important;
+  }
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #f0f4f8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #1e293b;
+}
+
+.App-link {
+  color: #10b981;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
